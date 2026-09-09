@@ -1,4 +1,4 @@
-// Annulation d'un tickets 
+// Annulation d'un ticket 
 
 function annulerTicket() {
     rl.question("Identifiant du ticket : ", (answer) => {
