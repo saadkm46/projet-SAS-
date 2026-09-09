@@ -1,0 +1,43 @@
+// Rechercher un ticket et Filter les trajets
+
+function rechercherTicket() {
+    rl.question("Nom du passager : ", (name) => {
+
+        const result = tickets.filter(
+            ticket =>
+                ticket.passengerName.toLowerCase() ===
+                name.toLowerCase()
+        );
+
+        if (result.length === 0) {
+            console.log("Aucun ticket trouvé.");
+        } else {
+            for (let ticket of result) {
+                console.log(ticket);
+            }
+        }
+
+        menu();
+    });
+}
+
+
+
+function filtrerTrajets() {
+    rl.question("Ville de départ : ", (city) => {
+
+        const result = trips.filter(
+            trip =>
+                trip.departure.toLowerCase() ===
+                city.toLowerCase()
+        );
+
+        for (let trip of result) {
+            console.log(
+                `${trip.departure} → ${trip.destination} : ${trip.price} DH`
+            );
+        }
+
+        menu();
+    });
+}
