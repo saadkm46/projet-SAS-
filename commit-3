@@ -1,0 +1,29 @@
+// Annulation d'un tickets 
+
+function annulerTicket() {
+    rl.question("Identifiant du ticket : ", (answer) => {
+
+        const index = tickets.findIndex(
+            t => t.id === Number(answer)
+        );
+
+        if (index === -1) {
+            console.log("Ticket introuvable.");
+            return menu();
+        }
+
+        const ticket = tickets[index];
+
+        const trip = trips.find(
+            t => t.id === ticket.tripId
+        );
+
+        trip.availableSeats++;
+
+        tickets.splice(index, 1);
+
+        console.log("Ticket annulé avec succès.");
+
+        menu();
+    });
+}
