@@ -1,0 +1,69 @@
+// l'affichage de menu " RAILWAY MANAGER " 
+
+function menu() {
+
+    console.log(`
+=================================
+        RAILWAY MANAGER
+=================================
+1. Afficher les trajets
+2. Acheter un ticket
+3. Afficher les tickets
+4. Annuler un ticket
+5. Rechercher un ticket
+6. Filtrer les trajets
+7. Trier les trajets
+8. les Statistiques de tickets
+0. Quitter
+`);
+
+    rl.question("Votre choix : ", (choice) => {
+
+        switch (choice) {
+
+            case "1":
+                console.log("Bonjour ! voici tous les Trajets disponible .");
+                afficherTrajets();
+                break;
+
+            case "2":
+                acheterTicket();
+                break;
+
+            case "3":
+                afficherTickets();
+                break;
+
+            case "4":
+                console.log("Attention ! cette opération doit supprimer voter ticket.")
+                annulerTicket();
+                break;
+
+            case "5":
+                rechercherTicket();
+                break;
+
+            case "6":
+                filtrerTrajets();
+                break;
+
+            case "7":
+                trierTrajets();
+                break;
+
+            case "8":
+                statistiques();
+                break;
+
+            case "0":
+                console.log("Au revoir !");
+                rl.close();
+                break;
+        default:
+                console.log("Choix invalide , revenir au menu et corriger votre choix.");
+               return menu();
+        }
+    });
+}
+
+return menu();
