@@ -1,0 +1,16 @@
+// Trier les trajets
+
+function trierTrajets() {
+
+    const result = [...trips].sort(
+        (a, b) => a.price - b.price
+    );
+
+    for (let trip of result) {
+        console.log(
+            `${trip.departure} → ${trip.destination} : ${trip.price} DH`
+        );
+    }
+
+    menu();
+}
