@@ -1,0 +1,51 @@
+// Bonus — Statistiques  
+
+function statistiques() {
+
+    console.log("\n=== STATISTIQUES ===");
+
+    console.log(
+        `Nombre total de tickets : ${tickets.length}`
+    );
+
+    let total = 0;
+
+    for (let ticket of tickets) {
+        total += ticket.price;
+    }
+
+    console.log(
+        `Chiffre d'affaires total : ${total} DH`
+    );
+    
+    let ventes = {};
+
+for (let ticket of tickets) {
+    if (ventes[ticket.tripId]) {
+        ventes[ticket.tripId]++;
+    } else {
+        ventes[ticket.tripId] = 1;
+    }
+}
+
+let Trajetleplusvendu = null;
+let maxventes = 0;
+
+for (let tripId in ventes) {
+    if (ventes[tripId] > maxventes) {
+        maxventes = ventes[tripId];
+        Trajetleplusvendu = tripId;
+    }
+}
+
+const trip = trips.find(t => t.id === Number(Trajetleplusvendu));
+
+if (trip) {
+    console.log(
+        `Trajet le plus vendu : ${trip.departure} => ${trip.destination}`
+    );
+    console.log(`${maxventes} tickets vendus`);
+}
+
+    return menu();
+}
