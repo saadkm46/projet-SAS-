@@ -13,7 +13,6 @@ function menu() {
 5. Rechercher un ticket
 6. Filtrer les trajets
 7. Trier les trajets
-8. les Statistiques de tickets
 0. Quitter
 `);
 
