@@ -50,10 +50,6 @@ function menu() {
                 trierTrajets();
                 break;
 
-            case "8":
-                statistiques();
-                break;
-
             case "0":
                 console.log("Au revoir !");
                 rl.close();
